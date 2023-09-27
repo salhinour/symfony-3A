@@ -1,0 +1,22 @@
+    {% set authors = [
+    {'id': 1, 'picture': '/images/Victor-Hugo.jpg', 'username': 'Victor Hugo'|upper, 'email': 'victor.hugo@gmail.com', 'nb_books': 100},
+    {'id': 2, 'picture': '/images/william-shakespeare.jpg', 'username': 'William Shakespeare'|upper, 'email': 'william.shakespeare@gmail.com', 'nb_books': 200},
+    {'id': 3, 'picture': '/images/Taha_Hussein.jpg', 'username': 'Taha Hussein'|upper, 'email': 'taha.hussein@gmail.com', 'nb_books': 300}
+] %}
+{% if authors is defined and authors|length > 0 %} {#defini et contient au moins un element#}
+<ul>
+{% set totalBooks = 0 %}
+    {% for author in authors %}
+        <li>
+            
+            <h2>{{ author.username}}</h2>
+            <a href="{{path('authorDetails',{'id':'1'})}}">details</a>
+            <p>Nombre de livres: {{ author.nb_books }}</p>
+        </li>
+        {% set totalBooks = totalBooks + author.nb_books %}
+    {% endfor %}
+</ul>
+<p>Le nombre total de livres de tous les auteurs est : {{ totalBooks }}</p>
+{% else %}
+    <p>Aucun auteur n'est disponible</p>   {#n'est pas defini ou ne contient pas des element#}
+{% endif %}

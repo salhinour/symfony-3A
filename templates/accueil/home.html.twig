@@ -1,0 +1,42 @@
+Hello c'est un exemple
+{{ param }} 
+{% set A="3A" %}
+{{A}}
+{#commentaire#}
+{% set B="6" %}
+<br>
+la valeur de b={{ B }}
+<br>
+
+{% set tab=[1,2,3] %}
+{% for i in tab %}
+{{ i }}
+{%endfor%}
+<br>
+
+{#{% set tab1=['cle'=>'val1','cel2'=>'val2' ]%}#}
+{% if 'Fabien' starts with 'F' %}
+commence par F
+{%endif%}
+<br>
+
+{% if 'Fabien' starts with 'a' %}
+commence par A
+{%else%}
+cette chaine ne commence pas par la lettre a
+{%endif%}
+<br>
+
+{% if 'Fabien' ends with 'n' %}
+termine par n
+{%endif%}
+<br>
+ {{ "hello"|upper}}
+ <br>
+ <a href="{{path('app_accueil')}}">Home</a>
+ <br>
+ <img src="{{asset('images/Taha_Hussein.jpg')}}"/>
+ <br>
+ <img src="{{asset('images/victor-hugo.jpg')}}"/>
+ <br>
+ <img src="{{asset('images/william-shakespeare.jpg')}}"/>
